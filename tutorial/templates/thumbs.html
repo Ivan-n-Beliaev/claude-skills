@@ -1,0 +1,127 @@
+<!doctype html>
+<meta charset="utf-8">
+<!--
+  Three thumbnail variants, 1280x720. Rendered by scripts/thumbs.js.
+
+  TWO ASSETS, both cut from the recording at full Retina resolution:
+    ui.png   the app element the video is about, cropped tight
+    ice.png  a frame of real ice, 16:9, used dark behind everything
+
+  DO NOT redraw the UI in HTML. The earlier version of this template did, and
+  the redrawn buttons used a different font from the app. Real pixels cannot
+  drift from the product and are honest about what is being sold. Crop them straight out of the source take.
+
+  Every variant keeps all content inside the safe box. Run thumbs.js with --zones
+  (thumbs.js --zones) to render YouTube's furniture on top and check it.
+-->
+<style>
+  :root{
+    --red:#c1272d;          /* brand red */
+    --red-hot:#e0353c;      /* red for type on dark */
+    --ink:#0c0c0e;
+    --dim:#c6cbd2;
+    /* YouTube furniture, as fractions of the frame */
+    --safe-bottom:82%;      /* nothing that must be read below this */
+    --badge-w:22%;          /* duration badge, bottom right */
+    --badge-h:18%;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#333;
+       font-family:'SF Pro Display','Helvetica Neue',Helvetica,'Avenir Next',sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .card{width:1280px;height:720px;position:relative;overflow:hidden;background:var(--ink)}
+
+  .photo{position:absolute;inset:0;background:url('ice.png') center/cover no-repeat;
+         filter:brightness(.5) saturate(.9) contrast(1.06)}
+  /* first gradient darkens the type side, second kills the bottom edge where
+     the progress bar and duration badge land */
+  .veil{position:absolute;inset:0}
+
+  .eyebrow{font-size:23px;font-weight:800;letter-spacing:5.5px;
+           color:var(--red-hot);text-transform:uppercase}
+  h1{font-size:122px;font-weight:900;line-height:.86;letter-spacing:-3px;
+     color:#fff;text-transform:uppercase}
+  h1 em{font-style:normal;color:var(--red-hot);display:block}
+  .sub{font-size:31px;font-weight:600;line-height:1.25;color:var(--dim);letter-spacing:-.2px}
+
+  /* the real app element */
+  .shot{position:absolute;border-radius:14px;
+        border:1px solid rgba(255,255,255,.13);
+        box-shadow:0 30px 70px rgba(0,0,0,.72), 0 0 0 9px rgba(255,255,255,.035)}
+
+  /* ---------- A : type left, app right  (the one that was used) ---------- */
+  #a .veil{background:
+    linear-gradient(100deg,#08080a 0%,rgba(8,8,10,.93) 33%,rgba(8,8,10,.5) 56%,rgba(8,8,10,.18) 100%),
+    linear-gradient(0deg,rgba(6,6,8,.88) 0%,rgba(6,6,8,0) 24%)}
+  #a .copy{position:absolute;left:64px;top:150px;width:700px}
+  #a .eyebrow{margin-bottom:20px}
+  #a .sub{margin-top:26px}
+  #a .shot{right:64px;top:46%;transform:translateY(-50%);height:424px}
+
+  /* ---------- B : app left, type right ---------- */
+  #b .veil{background:
+    linear-gradient(260deg,#08080a 0%,rgba(8,8,10,.93) 33%,rgba(8,8,10,.5) 56%,rgba(8,8,10,.18) 100%),
+    linear-gradient(0deg,rgba(6,6,8,.88) 0%,rgba(6,6,8,0) 24%)}
+  #b .copy{position:absolute;right:64px;top:150px;width:660px;text-align:right}
+  #b .eyebrow{margin-bottom:20px}
+  #b .sub{margin-top:26px}
+  #b .shot{left:64px;top:46%;transform:translateY(-50%);height:424px}
+
+  /* ---------- C : type across the top, app wide and low ---------- */
+  #c .veil{background:
+    linear-gradient(180deg,rgba(8,8,10,.96) 0%,rgba(8,8,10,.72) 42%,rgba(8,8,10,.42) 100%),
+    linear-gradient(0deg,rgba(6,6,8,.9) 0%,rgba(6,6,8,0) 26%)}
+  #c .copy{position:absolute;left:64px;top:60px;width:1150px}
+  #c .eyebrow{margin-bottom:16px}
+  #c h1{font-size:104px}
+  #c h1 em{display:inline}
+  #c .sub{margin-top:18px}
+  /* bottom:160 keeps the card clear of the 82% line and the badge corner.
+     Anything lower fails the --zones proof; check it, do not eyeball it. */
+  #c .shot{right:64px;bottom:160px;height:250px}
+
+  /* debug overlay: body.zones */
+  .zone{position:absolute;display:none}
+  body.zones .zone{display:block}
+  .z-badge{right:0;bottom:0;width:var(--badge-w);height:var(--badge-h);background:rgba(255,0,0,.32)}
+  .z-bar{left:0;bottom:0;width:100%;height:4%;background:rgba(255,120,0,.4)}
+  .z-safe{left:0;top:0;width:100%;height:var(--safe-bottom);
+          border-bottom:2px dashed rgba(0,255,180,.85)}
+</style>
+
+<!-- EDIT the copy. Rules: name the subject exactly ("Tag Window"), say it is
+     a tutorial, and keep the sub descriptive rather than a claim. Four words
+     maximum in the hero - it has to read at 320 px wide. -->
+
+<div class="card" id="a">
+  <div class="photo"></div><div class="veil"></div>
+  <div class="copy">
+    <div class="eyebrow">Pelaa &middot; Tutorial</div>
+    <h1>Tag<em>Window</em></h1>
+    <div class="sub">Build your own tag buttons,<br>step by step.</div>
+  </div>
+  <img class="shot" src="ui.png" alt="">
+  <div class="zone z-safe"></div><div class="zone z-bar"></div><div class="zone z-badge"></div>
+</div>
+
+<div class="card" id="b">
+  <div class="photo"></div><div class="veil"></div>
+  <div class="copy">
+    <div class="eyebrow">Pelaa &middot; Tutorial</div>
+    <h1>Tag<em>Window</em></h1>
+    <div class="sub">Build your own tag buttons,<br>step by step.</div>
+  </div>
+  <img class="shot" src="ui.png" alt="">
+  <div class="zone z-safe"></div><div class="zone z-bar"></div><div class="zone z-badge"></div>
+</div>
+
+<div class="card" id="c">
+  <div class="photo"></div><div class="veil"></div>
+  <div class="copy">
+    <div class="eyebrow">Pelaa &middot; Tutorial</div>
+    <h1>Tag <em>Window</em></h1>
+    <div class="sub">Build your own tag buttons, step by step.</div>
+  </div>
+  <img class="shot" src="ui.png" alt="">
+  <div class="zone z-safe"></div><div class="zone z-bar"></div><div class="zone z-badge"></div>
+</div>

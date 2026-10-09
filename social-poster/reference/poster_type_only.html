@@ -1,0 +1,55 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 1500px; }
+  body {
+    background: #0B0B0B; color: #fff; overflow: hidden; position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(760px 620px at 12% 6%, rgba(225,29,44,0.22) 0%, transparent 62%),
+      radial-gradient(900px 700px at 92% 96%, rgba(225,29,44,0.12) 0%, transparent 64%);
+  }
+  .wrap { position: relative; height: 100%; padding: 96px 92px 88px; display: flex; flex-direction: column; }
+  .icon { width: 92px; height: 92px; display: block; }
+  .eyebrow {
+    margin-top: 30px; font-size: 25px; font-weight: 600; letter-spacing: .40em;
+    color: #8A8A93; text-transform: uppercase;
+  }
+  /* Wide tracking suits the word but makes the dots in a version number float.
+     Tighten just the number, and add back the space the word's trailing gap ate. */
+  .eyebrow .ver { letter-spacing: .04em; margin-left: .30em; }
+  h1 {
+    margin-top: auto;
+    font-size: 118px; font-weight: 900; letter-spacing: -0.035em; line-height: 0.98;
+  }
+  h1 .red { color: #E11D2C; }
+  .sub {
+    margin-bottom: auto;
+    margin-top: 46px; font-size: 44px; font-weight: 400; line-height: 1.32; color: #B0B0B8;
+    letter-spacing: -0.01em; max-width: 900px;
+  }
+  .foot {
+    margin-top: auto; padding-top: 56px;
+    display: flex; align-items: baseline; gap: 22px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .foot .url { font-size: 42px; font-weight: 700; letter-spacing: -0.02em; }
+  .foot .ver { font-size: 30px; font-weight: 500; color: #8A8A93; letter-spacing: .02em; }
+</style></head>
+<body>
+  <div class="wrap">
+    <img class="icon" src="icon.png" alt="">
+    <div class="eyebrow">Pelaa<span class="ver">1.0.4</span></div>
+    <h1>Pelaa now <span class="red">records</span> the game</h1>
+    <p class="sub">Plug in your feed. Tag it while it records. The reports keep up.</p>
+    <div class="foot">
+      <span class="url">pelaa.tv</span>
+      <span class="ver">Out now for Mac</span>
+    </div>
+  </div>
+</body></html>

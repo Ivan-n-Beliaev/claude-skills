@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+.env*
+*.mp4
+*.m4a
+*.pcm
+*.npy
+*.srt
+*.vtt
+plan*.json
+timemap.json
+*_aai.json
+*_phrases.txt
+harvest.json
+index.json

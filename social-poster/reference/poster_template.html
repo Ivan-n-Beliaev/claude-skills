@@ -1,0 +1,68 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 1500px; }
+  body {
+    background: #0B0B0B; color: #fff; overflow: hidden; position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .shot {
+    position: absolute; top: 0; left: 0; right: 0; height: 760px; overflow: hidden;
+  }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; display: block; }
+  .shot::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(11,11,11,0.30) 0%, rgba(11,11,11,0.05) 34%, rgba(11,11,11,0.86) 84%, #0B0B0B 100%);
+  }
+  .rec {
+    position: absolute; top: 44px; right: 46px; z-index: 3;
+    display: flex; align-items: center; gap: 16px;
+    padding: 14px 26px 14px 22px; border-radius: 999px;
+    background: rgba(11,11,11,0.72); border: 1px solid rgba(255,255,255,0.16);
+    backdrop-filter: blur(6px);
+  }
+  .rec i { width: 20px; height: 20px; border-radius: 50%; background: #E11D2C; display: block; }
+  .rec span { font-size: 27px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+  .body {
+    position: absolute; left: 0; right: 0; top: 700px; bottom: 0;
+    padding: 0 88px 78px; display: flex; flex-direction: column;
+  }
+  .eyebrow {
+    font-size: 25px; font-weight: 600; letter-spacing: .40em; color: #8A8A93; text-transform: uppercase;
+  }
+  h1 {
+    margin-top: 28px;
+    font-size: 124px; font-weight: 900; letter-spacing: -0.035em; line-height: 0.98;
+  }
+  h1 .red { color: #E11D2C; }
+  .sub {
+    margin-top: 36px; font-size: 42px; font-weight: 400; line-height: 1.32; color: #B0B0B8;
+    letter-spacing: -0.01em; max-width: 900px;
+  }
+  .foot {
+    margin-top: auto; padding-top: 46px;
+    display: flex; align-items: center; gap: 22px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .foot img { width: 54px; height: 54px; display: block; }
+  .foot .url { font-size: 42px; font-weight: 700; letter-spacing: -0.02em; }
+  .foot .ver { font-size: 30px; font-weight: 500; color: #8A8A93; letter-spacing: .02em; margin-left: auto; }
+</style></head>
+<body>
+  <div class="shot">
+    <img src="plate.png" alt="">
+    <div class="rec"><i></i><span>Recording</span></div>
+  </div>
+  <div class="body">
+    <div class="eyebrow">Pelaa 1.0.4</div>
+    <h1>Pelaa now <span class="red">records</span> the game</h1>
+    <p class="sub">Plug in a camera. Tag it while it records. The reports keep up.</p>
+    <div class="foot">
+      <img src="icon.png" alt="">
+      <span class="url">pelaa.tv</span>
+      <span class="ver">Out now for Mac</span>
+    </div>
+  </div>
+</body></html>
